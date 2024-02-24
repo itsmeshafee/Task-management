@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="userbase::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="card mr-3 ml-3">
+            <div class="card-body">
+                <h1 class="text-center">Add Task</h1>
+                <div class="container-fluid mt-1">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <form th:object="${task}"
+                                method="post" th:action="@{/user/process-task}" class=mt-2>
+                                
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text mr-3">
+                                            <i>Title</i>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="title" name="title" placeholder="Enter Title here" class="form-control" />
+                                </div>
+                                
+                                <div class="input-group mt-3">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text mr-3">
+                                            <i>Description</i>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="description" name="description" placeholder="Enter Description here" class="form-control" />
+                                </div>
+                                
+                                <div class="input-group mt-3">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text mr-3">
+                                            <i>Due Date</i>
+                                        </div>
+                                    </div>
+                                    <input type="date" placeholder="dd/mm/yyyy" id="deuDate" name="dueDate" class="form-control" />
+                                </div>
+                                
+                                <div class="input-group mt-3">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text mr-3">
+                                            <i>Assignment</i>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="assignment" name="assignment" placeholder="Enter Assign here" class="form-control" />
+                                </div>
+                                <div class="container text-center">
+                                    <button class="btn btn-outline-primary mt-3">Save Task</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
